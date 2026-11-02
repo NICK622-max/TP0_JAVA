@@ -1,0 +1,152 @@
+//EXERCICE 1: TP0.java
+
+/*
+ * TP0 - Partie 1 : Calculette
+ * Nom: Nick Emmanueli Djoussi Bopda
+ * Groupe : 2
+ * Role   : calculatrice 
+ * Date   : 02/11/2026
+ */
+package tp0;
+
+import java.util.Scanner;
+/**
+ *
+ * @author emman
+ */
+public class TP0 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        String prenom;
+        Scanner sc;
+       sc = new Scanner(System.in);
+       System.out.println("Bonjour, quel est votre prenom ?");
+       prenom = sc.nextLine();
+        
+    }
+    
+}
+
+//EXERCICE 2: Exo2.java
+
+/*
+ * TP0 - Partie 2 : Calculette
+ * Nom: Nick Emmanueli Djoussi Bopda
+ * Groupe : 2
+ * Role   : calculatrice 
+ * Date   : 02/11/2026
+ */
+package exo2;
+
+import java.util.Scanner;
+/**
+ *
+ * @author emman
+ */
+public class Exo2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       //Declaration des variables
+       int nb; //nombre d'entiers à additionner
+       Scanner sc = new Scanner(System.in);
+       System.out.println("\n Entrer le nombre :");
+       nb=sc.nextInt(); // On demande a sc de donner le prochain entier
+       int result; //résultat
+       int ind; //indice
+       result=0;
+       
+       //Addition des nb premiers entiers
+       ind=1;
+       while(ind<=nb) {
+           result=result+ind;
+           ind++;
+       }
+       
+       //Affichage du résultat
+       System.out.println();
+       System.out.println("La somme des "+ nb + "entiers est : "+result);
+    }
+    
+}
+
+//EXERCICE3: Calculator.java
+
+/*
+ * TP0 - Partie 3 : Calculette
+ * Nom: Nick Emmanueli Djoussi Bopda
+ * Groupe : 2
+ * Role   : calculatrice 
+ * Date   : 02/11/2026
+ */
+package calculator;
+
+import java.util.Scanner;
+
+public class Calculator {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        //Exercice 2 : affichage du menu
+        System.out.println("Please enter the operator:");
+        System.out.println("1) add");
+        System.out.println("2) substract");
+        System.out.println("3) multiply");
+        System.out.println("4) divide");
+        System.out.println("5) modulo");
+
+        //Exercice 3 : lecture de l'operateur
+        int operateur = sc.nextInt();
+        
+        //Exercice 4 : premiere operande
+        System.out.println("Veuillez entrer le premier nombre:");
+        int operande1 = sc.nextInt();
+
+        //Exercice 5 : deuxieme operande
+        System.out.println("Veuillez entrer le second nombre:");
+        int operande2 = sc.nextInt();
+
+        //Exercice 6 : calcul et affichage
+        switch (operateur) {
+            case 1:
+                System.out.println("Le resultat est : " + (operande1 + operande2));
+                break;
+            case 2:
+                System.out.println("Le resultat est : " + (operande1 - operande2));
+                break;
+            case 3:
+                System.out.println("Le resultat est : " + (operande1 * operande2));
+                break;
+            case 4:
+                if (operande2 == 0) {
+                    System.out.println("Opération impossible");
+                } else {
+                    System.out.println("Le resultat est : " + (double) operande1 / operande2);
+                }
+                break;
+            case 5:
+                if (operande2 == 0) {
+                    System.out.println("Opération impossible");
+                } else {
+                    System.out.println("Le resultat est : " + (operande1 % operande2));
+                }
+                break;
+        }
+
+
+        //Exercices 7 et 8 : operateur invalide
+        if (operateur < 1 || operateur > 5) {
+            System.out.println("Operateur non valide. Veuillez choisir un operateur dans la liste presente");
+            System.exit(0); // on arrete le programme
+        }
+
+
+        sc.close();
+    }
+}
